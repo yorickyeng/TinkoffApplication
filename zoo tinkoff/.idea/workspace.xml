@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50255380-d38d-4895-97d3-ec4ef7351da3" name="Changes" comment="added zoo tinkoff">
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/Animal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/BehaviorType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/BiteType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/Cat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/Corgi.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/Dog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/Husky.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/META-INF/tinkoff_zoo.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/MainKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/ScottishCat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/SiameseCat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../tinkoff_zoo/out/production/tinkoff_zoo/ZooStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,20 +54,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "#1 on second",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/System/TinkoffApplication/zoo tinkoff/src/Main.kt",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#1 on second&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/System/Tinkoff_Application/zoo tinkoff&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/System/TinkoffApplication/zoo tinkoff/src/Main.kt&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -99,6 +87,8 @@
       <updated>1729452627236</updated>
       <workItem from="1729452628405" duration="653000" />
       <workItem from="1729556057497" duration="82000" />
+      <workItem from="1730106457667" duration="166000" />
+      <workItem from="1730106785216" duration="1624000" />
     </task>
     <task id="LOCAL-00001" summary="added zoo tinkoff">
       <option name="closed" value="true" />
