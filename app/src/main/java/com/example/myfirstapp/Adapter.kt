@@ -3,12 +3,12 @@ package com.example.myfirstapp
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfirstapp.databinding.ItemViewBinding
 
 class Adapter : RecyclerView.Adapter<ViewHolder>() {
-    private val jokes = mutableListOf<Joke>()
-
+    private var jokes = mutableListOf<Joke>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -16,9 +16,7 @@ class Adapter : RecyclerView.Adapter<ViewHolder>() {
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return jokes.size
-    }
+    override fun getItemCount() = jokes.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(jokes[position])
@@ -34,6 +32,12 @@ class Adapter : RecyclerView.Adapter<ViewHolder>() {
     fun addItems(joke: Joke) {
         jokes.add(joke)
         notifyDataSetChanged()
+    }
+
+    fun updateJokes(newJokes: List<Joke>) {
+        val diffResult = DiffUtil.calculateDiff(JokeDiffUtilCallback(jokes, newJokes))
+        jokes = newJokes.toMutableList()
+        diffResult.dispatchUpdatesTo(this)
     }
 
 }
