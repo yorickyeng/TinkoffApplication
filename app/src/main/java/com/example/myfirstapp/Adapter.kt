@@ -24,20 +24,11 @@ class Adapter : RecyclerView.Adapter<ViewHolder>() {
 
     @SuppressLint("NotifyDataSetChanged")
     fun setItems(list: List<Joke>) {
+        val diffResult = DiffUtil.calculateDiff(JokeDiffUtilCallback(jokes, list))
+        jokes.clear()
         jokes.addAll(list)
-        notifyDataSetChanged()
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun addItems(joke: Joke) {
-        jokes.add(joke)
-        notifyDataSetChanged()
-    }
-
-    fun updateJokes(newJokes: List<Joke>) {
-        val diffResult = DiffUtil.calculateDiff(JokeDiffUtilCallback(jokes, newJokes))
-        jokes = newJokes.toMutableList()
         diffResult.dispatchUpdatesTo(this)
+        notifyDataSetChanged()
     }
 
 }
