@@ -1,14 +1,12 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,8 +20,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
         adapter.setItems(jokeList)
 
-        button = findViewById(R.id.button)
-        button.setOnClickListener() {
+        binding.button.setOnClickListener() {
             adapter.updateJokes(newJokes)
         }
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -16,7 +17,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Some default category" />
 
     <TextView
         android:id="@+id/questionTextView"
@@ -27,7 +29,8 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/categoryTextView" />
+        app:layout_constraintTop_toBottomOf="@id/categoryTextView"
+        tools:text="Some default question" />
 
     <TextView
         android:id="@+id/answerTextView"
@@ -40,6 +43,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/questionTextView" />
+        app:layout_constraintTop_toBottomOf="@id/questionTextView"
+        tools:text="Some stupid answer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
