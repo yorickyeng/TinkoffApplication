@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyFirstApp</string>
+    <string name="generate">Generate</string>
+    <string name="joke_title">Joke Title</string>
+    <string name="joke_question">Joke Question</string>
+    <string name="joke_answer">Joke Answer</string>
+    <string name="refresh_jokes">Refresh Jokes</string>
 </resources>

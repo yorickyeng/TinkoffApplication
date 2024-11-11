@@ -1,39 +1,32 @@
 package com.example.myfirstapp
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfirstapp.databinding.ItemViewBinding
 
 class Adapter : RecyclerView.Adapter<ViewHolder>() {
-    private val jokes = mutableListOf<Joke>()
-
+    private var jokes = mutableListOf<Joke>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemViewBinding.inflate(inflater)
+        val binding = ItemViewBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
 
-    override fun getItemCount(): Int {
-        return jokes.size
-    }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(jokes[position])
+        val joke = jokes[position]
+        holder.bind(joke)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
+    override fun getItemCount(): Int = jokes.size
+
     fun setItems(list: List<Joke>) {
+        val diffResult = DiffUtil.calculateDiff(JokeDiffUtilCallback(jokes, list))
+        jokes.clear()
         jokes.addAll(list)
-        notifyDataSetChanged()
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun addItems(joke: Joke) {
-        jokes.add(joke)
-        notifyDataSetChanged()
+        diffResult.dispatchUpdatesTo(this)
     }
 
 }

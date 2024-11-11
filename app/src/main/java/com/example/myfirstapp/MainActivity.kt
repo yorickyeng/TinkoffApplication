@@ -2,7 +2,7 @@ package com.example.myfirstapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.fragment.app.commit
 import com.example.myfirstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -12,38 +12,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.recyclerView.layoutManager = GridLayoutManager(this, 1)
-        val jokeList = createJokeList()
 
-        val adapter = Adapter()
-        binding.recyclerView.adapter = adapter
-        adapter.setItems(jokeList)
-
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                replace(R.id.fragmentContainer, JokesListFragment())
+            }
+        }
     }
 
-    private fun createJokeList(): List<Joke> {
-        val jokeList = listOf(
-            Joke(
-                "Christmas",
-                "What does Santa suffer from if he gets stuck in a chimney?",
-                "Claustrophobia!"
-            ),
-            Joke("Math", "What’s a math teacher’s favorite place in NYC?", "Times Square."),
-            Joke("Animals", "What do you call a fish wearing a bowtie?", "Sofishticated."),
-            Joke("Tech", "What was the spider doing on the computer?", "He was making a web-site."),
-            Joke(
-                "School",
-                "Why did the student bring a ladder to school?",
-                "Because he wanted to go to high school."
-            ),
-            Joke(
-                "Science",
-                "Why did the biologist break up with the physicist?",
-                "There was no chemistry."
-            ),
-            Joke("Food", "What do you call cheese that isn’t yours?", "Nacho cheese.")
+    fun onJokeClick(joke: Joke) {
+        val jokeDetailsFragment = JokeDetailsFragment.newInstance(
+            joke.category,
+            joke.question,
+            joke.answer
         )
-        return jokeList
+        supportFragmentManager.commit {
+            replace(R.id.fragmentContainer, jokeDetailsFragment)
+            addToBackStack(null)
+        }
     }
-
 }
