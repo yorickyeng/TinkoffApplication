@@ -1,6 +1,5 @@
 package com.example.myfirstapp
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -12,23 +11,22 @@ class Adapter : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = ItemViewBinding.inflate(inflater)
+        val binding = ItemViewBinding.inflate(inflater, parent, false)
         return ViewHolder(binding)
     }
 
-    override fun getItemCount() = jokes.size
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(jokes[position])
+        val joke = jokes[position]
+        holder.bind(joke)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
+    override fun getItemCount(): Int = jokes.size
+
     fun setItems(list: List<Joke>) {
         val diffResult = DiffUtil.calculateDiff(JokeDiffUtilCallback(jokes, list))
         jokes.clear()
         jokes.addAll(list)
         diffResult.dispatchUpdatesTo(this)
-        notifyDataSetChanged()
     }
 
 }
