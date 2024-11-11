@@ -13,7 +13,7 @@ class JokeViewModel : ViewModel() {
         _jokes.value = JokeRepository().getInitialJokes()
     }
 
-    fun updateJokes(newJokes: List<Joke>) {
-        _jokes.value = newJokes
+    fun updateJokes() {
+        _jokes.value = JokeRepository().getUpdatedJokes()
     }
 }

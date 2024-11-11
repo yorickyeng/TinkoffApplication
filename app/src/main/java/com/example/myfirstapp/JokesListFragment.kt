@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myfirstapp.databinding.FragmentJokesListBinding
 
 class JokesListFragment : Fragment() {
     private var _binding: FragmentJokesListBinding? = null
     private val binding get() = _binding!!
-    private val jokeViewModel: JokeViewModel by activityViewModels()
+    private val jokeViewModel: JokeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,8 +35,7 @@ class JokesListFragment : Fragment() {
         }
 
         binding.refreshButton.setOnClickListener {
-            val newJokes = JokeRepository().getUpdatedJokes()
-            jokeViewModel.updateJokes(newJokes)
+            jokeViewModel.updateJokes()
         }
     }
 

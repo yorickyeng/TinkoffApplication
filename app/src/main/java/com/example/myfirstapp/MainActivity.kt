@@ -1,7 +1,6 @@
 package com.example.myfirstapp
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
 import com.example.myfirstapp.databinding.ActivityMainBinding
@@ -13,8 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.generateButton.visibility = View.GONE
 
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
