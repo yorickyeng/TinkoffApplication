@@ -11,13 +11,7 @@ class ViewHolder(private val binding: ItemViewBinding) : RecyclerView.ViewHolder
         binding.answerTextView.text = joke.answer
 
         itemView.setOnClickListener {
-            val intent = JokeDetailsActivity.newIntent(
-                itemView.context,
-                joke.category,
-                joke.question,
-                joke.answer
-            )
-            itemView.context.startActivity(intent)
+            (itemView.context as? MainActivity)?.onJokeClick(joke)
         }
     }
 

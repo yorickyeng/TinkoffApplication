@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.myfirstapp.databinding.ActivityJokeDetailsBinding
 
-private const val JOKE_TITLE_KEY = "JOKE_TITLE"
+private const val JOKE_CATEGORY_KEY = "JOKE_CATEGORY"
 private const val JOKE_QUESTION_KEY = "JOKE_QUESTION"
 private const val JOKE_ANSWER_KEY = "JOKE_ANSWER"
 
@@ -19,7 +19,7 @@ class JokeDetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Получаем данные из Intent
-        val title = intent.getStringExtra(JOKE_TITLE_KEY)
+        val title = intent.getStringExtra(JOKE_CATEGORY_KEY)
         val question = intent.getStringExtra(JOKE_QUESTION_KEY)
         val answer = intent.getStringExtra(JOKE_ANSWER_KEY)
 
@@ -32,7 +32,7 @@ class JokeDetailsActivity : AppCompatActivity() {
     companion object {
         fun newIntent(context: Context, title: String, question: String, answer: String): Intent {
             return Intent(context, JokeDetailsActivity::class.java).apply {
-                putExtra(JOKE_TITLE_KEY, title)
+                putExtra(JOKE_CATEGORY_KEY, title)
                 putExtra(JOKE_QUESTION_KEY, question)
                 putExtra(JOKE_ANSWER_KEY, answer)
             }

@@ -5,16 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class JokeViewModel : ViewModel() {
-    private val repository = JokeRepository()
+
     private val _jokes = MutableLiveData<List<Joke>>()
-    val jokes: LiveData<List<Joke>> get() = _jokes
+    val jokes: LiveData<List<Joke>> = _jokes
 
     init {
-        _jokes.value = repository.getInitialJokes()
+        _jokes.value = JokeRepository().getInitialJokes()
     }
 
-    fun refreshJokes() {
-        _jokes.value = repository.getUpdatedJokes()
+    fun updateJokes(newJokes: List<Joke>) {
+        _jokes.value = newJokes
     }
-
 }
