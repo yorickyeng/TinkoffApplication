@@ -2,20 +2,12 @@ package com.example.myfirstapp
 
 import androidx.recyclerview.widget.DiffUtil
 
-class JokeDiffUtilCallback(
-    private val oldList: List<Joke>,
-    private val newList: List<Joke>
-) : DiffUtil.Callback() {
-    override fun getOldListSize() = oldList.size
-
-    override fun getNewListSize() = newList.size
-
-    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition].id == newList[newItemPosition].id
+class JokeDiffUtilCallback : DiffUtil.ItemCallback<Joke>() {
+    override fun areItemsTheSame(oldItem: Joke, newItem: Joke): Boolean {
+        return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-        return oldList[oldItemPosition] == newList[newItemPosition]
+    override fun areContentsTheSame(oldItem: Joke, newItem: Joke): Boolean {
+        return oldItem == newItem
     }
-
 }

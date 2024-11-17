@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">MyFirstApp</string>
-    <string name="generate">Generate</string>
-    <string name="joke_title">Joke Title</string>
-    <string name="joke_question">Joke Question</string>
-    <string name="joke_answer">Joke Answer</string>
-    <string name="refresh_jokes">Refresh Jokes</string>
+    <string name="app_name">Joke App</string>
+    <string name="category">Category</string>
+    <string name="question">Question</string>
+    <string name="answer">Answer</string>
+    <string name="add_joke">Add Joke</string>
+    <string name="jokes_left_the_chat_add_a_new_one">Jokes left the chat, add a new one!</string>
 </resources>

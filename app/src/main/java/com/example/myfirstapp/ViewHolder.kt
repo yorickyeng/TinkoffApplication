@@ -1,18 +1,21 @@
 package com.example.myfirstapp
 
+import android.view.View
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myfirstapp.databinding.ItemViewBinding
 
-class ViewHolder(private val binding: ItemViewBinding) : RecyclerView.ViewHolder(binding.root) {
+class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    private val textCategory = itemView.findViewById<TextView>(R.id.categoryTextView)
+    private val textQuestion = itemView.findViewById<TextView>(R.id.questionTextView)
+    private val textAnswer = itemView.findViewById<TextView>(R.id.answerTextView)
 
     fun bind(joke: Joke) {
-        binding.categoryTextView.text = joke.category
-        binding.questionTextView.text = joke.question
-        binding.answerTextView.text = joke.answer
+        textCategory.text = joke.category
+        textQuestion.text = joke.question
+        textAnswer.text = joke.answer
 
         itemView.setOnClickListener {
             (itemView.context as? MainActivity)?.onJokeClick(joke)
         }
     }
-
 }
