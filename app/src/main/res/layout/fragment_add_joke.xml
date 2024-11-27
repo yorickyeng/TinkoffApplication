@@ -6,7 +6,7 @@
     android:padding="16dp">
 
     <EditText
-        android:id="@+id/editTextCategory1"
+        android:id="@+id/editTextCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="Science"
@@ -16,7 +16,7 @@
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/editTextQuestion1"
+        android:id="@+id/editTextQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="Why did the biologist break up with the physicist?"
@@ -26,7 +26,7 @@
         android:minHeight="48dp" />
 
     <EditText
-        android:id="@+id/editTextAnswer1"
+        android:id="@+id/editTextAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:autofillHints="There was no chemistry"
@@ -36,7 +36,7 @@
         android:minHeight="48dp" />
 
     <Button
-        android:id="@+id/buttonSaveJoke1"
+        android:id="@+id/buttonSaveJoke"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:maxWidth="320dp"

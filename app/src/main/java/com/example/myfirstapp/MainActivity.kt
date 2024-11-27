@@ -1,12 +1,12 @@
 package com.example.myfirstapp
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.CoroutineScope
@@ -35,8 +35,14 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = adapter
 
         buttonAddJoke.setOnClickListener {
-            startActivity(Intent(this, AddJokeActivity::class.java))
+            emptyTextView.visibility = View.GONE
+            buttonAddJoke.visibility = View.GONE
+            supportFragmentManager.commit {
+                replace(R.id.fragmentContainer, AddJokeFragment())
+                addToBackStack(null) // Добавляем в back stack для возможности возврата
+            }
         }
+
     }
 
     override fun onResume() {
@@ -47,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadJokes() {
         progressBar.visibility = View.VISIBLE
         emptyTextView.visibility = View.GONE
+        buttonAddJoke.visibility = View.VISIBLE
 
         CoroutineScope(Dispatchers.Main).launch {
             delay(1000)
@@ -63,12 +70,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onJokeClick(joke: Joke) {
-        val intent = JokeDetailsActivity.newIntent(
-            this,
-            joke.category,
-            joke.question,
-            joke.answer
-        )
-        startActivity(intent)
+        buttonAddJoke.visibility = View.GONE
+        supportFragmentManager.commit {
+            replace(
+                R.id.fragmentContainer,
+                JokeDetailsFragment.newInstance(joke.category, joke.question, joke.answer)
+            )
+            addToBackStack(null)
+        }
+    }
+
+    fun refreshJokeList() {
+        loadJokes()
+    }
+
+    @Deprecated("This method has been deprecated in favor of using the\n      {@link OnBackPressedDispatcher} via {@link #getOnBackPressedDispatcher()}.\n      The OnBackPressedDispatcher controls how back button events are dispatched\n      to one or more {@link OnBackPressedCallback} objects.")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        buttonAddJoke.visibility = View.VISIBLE
     }
 }

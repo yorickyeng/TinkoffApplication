@@ -1,5 +1,5 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -17,11 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:text="@string/jokes_left_the_chat_add_a_new_one"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="gone"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp" />
+        android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
