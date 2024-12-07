@@ -7,25 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myfirstapp.databinding.FragmentJokeDetailsBinding
 
-private const val JOKE_CATEGORY_KEY = "JOKE_CATEGORY"
-private const val JOKE_QUESTION_KEY = "JOKE_QUESTION"
-private const val JOKE_ANSWER_KEY = "JOKE_ANSWER"
-
 class JokeDetailsFragment : Fragment() {
     private var _binding: FragmentJokeDetailsBinding? = null
     private val binding get() = _binding!!
-
-    companion object {
-        fun newInstance(title: String, question: String, answer: String): JokeDetailsFragment {
-            val fragment = JokeDetailsFragment()
-            fragment.arguments = Bundle().apply {
-                putString(JOKE_CATEGORY_KEY, title)
-                putString(JOKE_QUESTION_KEY, question)
-                putString(JOKE_ANSWER_KEY, answer)
-            }
-            return fragment
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,5 +34,21 @@ class JokeDetailsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        private const val JOKE_CATEGORY_KEY = "JOKE_CATEGORY"
+        private const val JOKE_QUESTION_KEY = "JOKE_QUESTION"
+        private const val JOKE_ANSWER_KEY = "JOKE_ANSWER"
+
+        fun newInstance(title: String, question: String, answer: String): JokeDetailsFragment {
+            return JokeDetailsFragment().apply {
+                arguments = Bundle().apply {
+                    putString(JOKE_CATEGORY_KEY, title)
+                    putString(JOKE_QUESTION_KEY, question)
+                    putString(JOKE_ANSWER_KEY, answer)
+                }
+            }
+        }
     }
 }

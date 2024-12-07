@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_add_joke"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextCategory1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Science"
+        android:hint="@string/category"
+        android:inputType="text"
+        android:maxWidth="320dp"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextQuestion1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="Why did the biologist break up with the physicist?"
+        android:hint="@string/question"
+        android:inputType="text"
+        android:maxWidth="320dp"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/editTextAnswer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="There was no chemistry"
+        android:hint="@string/answer"
+        android:inputType="text"
+        android:maxWidth="320dp"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/buttonSaveJoke1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxWidth="320dp"
+        android:text="@string/add_joke" />
+</LinearLayout>

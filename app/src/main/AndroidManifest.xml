@@ -15,6 +15,7 @@
         <activity
             android:name=".JokeDetailsActivity"
             android:exported="false" />
+        <activity android:name=".AddJokeActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
